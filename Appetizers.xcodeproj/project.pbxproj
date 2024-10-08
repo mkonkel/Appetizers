@@ -14,6 +14,13 @@
 		BB4308252CABAF8F0011CFFB /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4308242CABAF8F0011CFFB /* OrderView.swift */; };
 		BB4308272CABAFA10011CFFB /* AppetizerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4308262CABAFA10011CFFB /* AppetizerListView.swift */; };
 		BB4308292CABAFAA0011CFFB /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4308282CABAFAA0011CFFB /* AccountView.swift */; };
+		BB43082D2CACF5CD0011CFFB /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43082C2CACF5CD0011CFFB /* Appetizer.swift */; };
+		BB4308302CACF8FF0011CFFB /* AppetizerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB43082F2CACF8FF0011CFFB /* AppetizerListItem.swift */; };
+		BB9916ED2CB38F3E00882323 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916EC2CB38F3E00882323 /* NetworkManager.swift */; };
+		BB9916EF2CB3906A00882323 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916EE2CB3906A00882323 /* APError.swift */; };
+		BB9916F22CB4DB3400882323 /* AppetizerListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */; };
+		BB9916F42CB4DDC200882323 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916F32CB4DDC200882323 /* Alert.swift */; };
+		BB9916F82CB4E35B00882323 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916F72CB4E35B00882323 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,13 @@
 		BB4308242CABAF8F0011CFFB /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		BB4308262CABAFA10011CFFB /* AppetizerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListView.swift; sourceTree = "<group>"; };
 		BB4308282CABAFAA0011CFFB /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		BB43082C2CACF5CD0011CFFB /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
+		BB43082F2CACF8FF0011CFFB /* AppetizerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListItem.swift; sourceTree = "<group>"; };
+		BB9916EC2CB38F3E00882323 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BB9916EE2CB3906A00882323 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewVM.swift; sourceTree = "<group>"; };
+		BB9916F32CB4DDC200882323 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		BB9916F72CB4E35B00882323 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +71,9 @@
 		BB4308132CABAF2F0011CFFB /* Appetizers */ = {
 			isa = PBXGroup;
 			children = (
+				BB9916F02CB4DB2600882323 /* ViewModel */,
+				BB43082B2CACF5B10011CFFB /* API */,
+				BB43082A2CACF5A50011CFFB /* Domain */,
 				BB4308222CABAF760011CFFB /* UI */,
 				BB4308142CABAF2F0011CFFB /* AppetizersApp.swift */,
 				BB4308162CABAF2F0011CFFB /* AppetizerTabView.swift */,
@@ -77,6 +94,7 @@
 		BB4308222CABAF760011CFFB /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BB43082E2CACF8E80011CFFB /* Widget */,
 				BB4308232CABAF7D0011CFFB /* Screen */,
 			);
 			path = UI;
@@ -88,8 +106,43 @@
 				BB4308242CABAF8F0011CFFB /* OrderView.swift */,
 				BB4308262CABAFA10011CFFB /* AppetizerListView.swift */,
 				BB4308282CABAFAA0011CFFB /* AccountView.swift */,
+				BB9916F72CB4E35B00882323 /* LoadingView.swift */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		BB43082A2CACF5A50011CFFB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BB43082C2CACF5CD0011CFFB /* Appetizer.swift */,
+				BB9916EE2CB3906A00882323 /* APError.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BB43082B2CACF5B10011CFFB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BB9916EC2CB38F3E00882323 /* NetworkManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BB43082E2CACF8E80011CFFB /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				BB43082F2CACF8FF0011CFFB /* AppetizerListItem.swift */,
+				BB9916F32CB4DDC200882323 /* Alert.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		BB9916F02CB4DB2600882323 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +215,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB43082D2CACF5CD0011CFFB /* Appetizer.swift in Sources */,
+				BB9916EF2CB3906A00882323 /* APError.swift in Sources */,
 				BB4308252CABAF8F0011CFFB /* OrderView.swift in Sources */,
+				BB4308302CACF8FF0011CFFB /* AppetizerListItem.swift in Sources */,
+				BB9916F22CB4DB3400882323 /* AppetizerListViewVM.swift in Sources */,
+				BB9916F82CB4E35B00882323 /* LoadingView.swift in Sources */,
 				BB4308272CABAFA10011CFFB /* AppetizerListView.swift in Sources */,
+				BB9916ED2CB38F3E00882323 /* NetworkManager.swift in Sources */,
 				BB4308172CABAF2F0011CFFB /* AppetizerTabView.swift in Sources */,
+				BB9916F42CB4DDC200882323 /* Alert.swift in Sources */,
 				BB4308152CABAF2F0011CFFB /* AppetizersApp.swift in Sources */,
 				BB4308292CABAFAA0011CFFB /* AccountView.swift in Sources */,
 			);
