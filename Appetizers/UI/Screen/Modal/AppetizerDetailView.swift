@@ -9,10 +9,13 @@ import SwiftUI
 
 struct AppetizerDetailView: View {
     var appetizer: Appetizer!
+    @Binding var isShowingDetail: Bool
 
     var body: some View {
         VStack {
-            topImage(imageUrlString: appetizer.imageURL)
+            topImage(imageUrlString: appetizer.imageURL) {
+                isShowingDetail = false
+            }
             Spacer()
             title()
             Spacer()
@@ -23,7 +26,6 @@ struct AppetizerDetailView: View {
             button()
                 .padding(.bottom, 30)
         }
-        .padding(.horizontal)
         .frame(width: 320, height: 525)
         .background(Color(.systemBackground))
         .cornerRadius(12)
@@ -57,21 +59,26 @@ struct AppetizerDetailView: View {
     }
 }
 
-@ViewBuilder private func topImage(imageUrlString: String) -> some View {
+@ViewBuilder private func topImage(
+    imageUrlString: String,
+    onClose: @escaping () -> Void
+) -> some View {
     AppetizerRemoteImage(urlString: imageUrlString)
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 300, height: 225)
+        .aspectRatio(contentMode: .fill)
+        .frame(width: 320, height: 225)
         .overlay(alignment: .topTrailing) {
             Button {
-                print("dismiss")
+                onClose()
             } label: {
                 Image(systemName: "xmark")
+                    .imageScale(.small)
                     .frame(width: 30, height: 30)
                     .background(.white)
                     .clipShape(.circle)
                     .foregroundColor(.brandPrimary)
                     .opacity(0.6)
             }
+            .padding(.all, 5)
         }
 }
 
@@ -87,10 +94,12 @@ struct AppetizerDetailView: View {
                 .fontWeight(.semibold)
                 .italic()
         }
-        Spacer()
     }
 }
 
 #Preview {
-    AppetizerDetailView(appetizer: MockData.sampleAppetizer)
+    AppetizerDetailView(
+        appetizer: MockData.sampleAppetizer,
+        isShowingDetail: .constant(true)
+    )
 }
