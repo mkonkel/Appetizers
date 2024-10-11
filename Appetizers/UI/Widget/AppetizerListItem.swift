@@ -13,10 +13,9 @@ struct AppetizerListItem : View{
     
     var body: some View {
             HStack {
-                Image("asian-flank-steak")
-                    .resizable()
+                AppetizerRemoteImage(urlString: item.imageURL)
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 120, height: 90, alignment: .center)
+                    .frame(width: 120, height: 90)
                     .cornerRadius(5)
                 
                 VStack(alignment: .leading, spacing: 5) {
