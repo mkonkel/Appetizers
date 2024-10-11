@@ -33,7 +33,7 @@ struct AppetizerDetailView: View {
     }
 
     @ViewBuilder private func button() -> some View {
-        CustomButton(title: "$\(appetizer.price) - Add To Order")
+        CustomButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Order")
     }
 
     @ViewBuilder private func title() -> some View {

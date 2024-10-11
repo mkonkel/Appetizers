@@ -11,6 +11,8 @@ final class AppetizerListViewVM : ObservableObject {
     @Published var appetizers: [Appetizer] = []
     @Published var alert: AlertItem?
     @Published var isLoading = false
+    @Published var isShowingDetail = false
+    @Published var sellectedAppetizer: Appetizer?
     
     func getAppetizers() {
         isLoading = true
