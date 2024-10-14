@@ -67,18 +67,7 @@ struct AppetizerDetailView: View {
         .aspectRatio(contentMode: .fill)
         .frame(width: 320, height: 225)
         .overlay(alignment: .topTrailing) {
-            Button {
-                onClose()
-            } label: {
-                Image(systemName: "xmark")
-                    .imageScale(.small)
-                    .frame(width: 30, height: 30)
-                    .background(.white)
-                    .clipShape(.circle)
-                    .foregroundColor(.brandPrimary)
-                    .opacity(0.6)
-            }
-            .padding(.all, 5)
+            DismissButton(onClick: onClose)
         }
 }
 
