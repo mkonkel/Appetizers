@@ -20,6 +20,8 @@
 		BB98CDB72CBCCAAE00981F38 /* AccountViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98CDB62CBCCAAE00981F38 /* AccountViewViewModel.swift */; };
 		BB98CDBA2CBCCC0000981F38 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98CDB92CBCCC0000981F38 /* String+Ext.swift */; };
 		BB98CDBC2CBCD02E00981F38 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98CDBB2CBCD02E00981F38 /* User.swift */; };
+		BB98CDBE2CBE151600981F38 /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98CDBD2CBE151600981F38 /* OrdersViewModel.swift */; };
+		BB98CDC32CBE1C0900981F38 /* EmptState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98CDC22CBE1C0900981F38 /* EmptState.swift */; };
 		BB9916ED2CB38F3E00882323 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916EC2CB38F3E00882323 /* NetworkManager.swift */; };
 		BB9916EF2CB3906A00882323 /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916EE2CB3906A00882323 /* APError.swift */; };
 		BB9916F22CB4DB3400882323 /* AppetizerListViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */; };
@@ -45,6 +47,8 @@
 		BB98CDB62CBCCAAE00981F38 /* AccountViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewViewModel.swift; sourceTree = "<group>"; };
 		BB98CDB92CBCCC0000981F38 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		BB98CDBB2CBCD02E00981F38 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB98CDBD2CBE151600981F38 /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
+		BB98CDC22CBE1C0900981F38 /* EmptState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptState.swift; sourceTree = "<group>"; };
 		BB9916EC2CB38F3E00882323 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BB9916EE2CB3906A00882323 /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewVM.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		BB4308232CABAF7D0011CFFB /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BB98CDC12CBE1BFD00981F38 /* EmptyState */,
 				BB9916FC2CB62FFF00882323 /* Modal */,
 				BB4308242CABAF8F0011CFFB /* OrderView.swift */,
 				BB4308262CABAFA10011CFFB /* AppetizerListView.swift */,
@@ -165,11 +170,20 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		BB98CDC12CBE1BFD00981F38 /* EmptyState */ = {
+			isa = PBXGroup;
+			children = (
+				BB98CDC22CBE1C0900981F38 /* EmptState.swift */,
+			);
+			path = EmptyState;
+			sourceTree = "<group>";
+		};
 		BB9916F02CB4DB2600882323 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				BB9916F12CB4DB3400882323 /* AppetizerListViewVM.swift */,
 				BB98CDB62CBCCAAE00981F38 /* AccountViewViewModel.swift */,
+				BB98CDBD2CBE151600981F38 /* OrdersViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -261,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB98CDBA2CBCCC0000981F38 /* String+Ext.swift in Sources */,
+				BB98CDC32CBE1C0900981F38 /* EmptState.swift in Sources */,
 				BB43082D2CACF5CD0011CFFB /* Appetizer.swift in Sources */,
 				BB9916EF2CB3906A00882323 /* APError.swift in Sources */,
 				BB4308252CABAF8F0011CFFB /* OrderView.swift in Sources */,
@@ -279,6 +294,7 @@
 				BB4308152CABAF2F0011CFFB /* AppetizersApp.swift in Sources */,
 				BB4308292CABAFAA0011CFFB /* AccountView.swift in Sources */,
 				BB98CDBC2CBCD02E00981F38 /* User.swift in Sources */,
+				BB98CDBE2CBE151600981F38 /* OrdersViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

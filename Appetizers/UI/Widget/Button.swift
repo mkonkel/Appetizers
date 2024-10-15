@@ -11,7 +11,7 @@ struct CustomButton: View {
     var title: LocalizedStringKey
     
     var body: some View {
-            Text(title)
+        Text(title)
                 .frame(width: 280, height: 50)
                 .background(.brandPrimary)
                 .foregroundColor(.white)
