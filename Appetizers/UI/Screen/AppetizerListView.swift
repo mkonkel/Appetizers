@@ -28,8 +28,8 @@ struct AppetizerListView: View {
 
             if viewModel.isShowingDetail {
                 AppetizerDetailView(
-                    appetizer: viewModel.sellectedAppetizer,
-                    isShowingDetail: $viewModel.isShowingDetail
+                    isShowingDetail: $viewModel.isShowingDetail,
+                    appetizer: viewModel.sellectedAppetizer
                 )
             }
 

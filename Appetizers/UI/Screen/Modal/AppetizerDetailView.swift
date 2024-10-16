@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AppetizerDetailView: View {
-    var appetizer: Appetizer!
+    @EnvironmentObject var order: Order
+
     @Binding var isShowingDetail: Bool
+    var appetizer: Appetizer!
 
     var body: some View {
         VStack {
@@ -23,8 +25,11 @@ struct AppetizerDetailView: View {
             Spacer()
             nutritionDetails()
             Spacer()
-            button()
-                .padding(.bottom, 30)
+            button {
+                order.add(appetizer)
+                isShowingDetail = false
+            }
+                
         }
         .frame(width: 320, height: 525)
         .background(Color(.systemBackground))
@@ -32,8 +37,14 @@ struct AppetizerDetailView: View {
         .shadow(radius: 40)
     }
 
-    @ViewBuilder private func button() -> some View {
-        CustomButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Order")
+    @ViewBuilder private func button(onClick: @escaping () -> Void) -> some View {
+        Button {
+            onClick()
+        } label: {
+            Text("$\(appetizer.price, specifier: "%.2f") - Add To Order")
+        }
+        .modifier(StandardButtonStyle())
+        .padding(.bottom, 30)
     }
 
     @ViewBuilder private func title() -> some View {
@@ -88,7 +99,7 @@ struct AppetizerDetailView: View {
 
 #Preview {
     AppetizerDetailView(
-        appetizer: MockData.sampleAppetizer,
-        isShowingDetail: .constant(true)
+        isShowingDetail: .constant(true),
+        appetizer: MockData.sampleAppetizer
     )
 }

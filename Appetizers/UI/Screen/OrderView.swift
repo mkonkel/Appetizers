@@ -8,52 +8,49 @@
 import SwiftUI
 
 struct OrderView: View {
-    @StateObject var viewModel = OrdersViewModel()
+    @EnvironmentObject var order: Order
 
     var body: some View {
         NavigationView {
             ZStack {
                 VStack {
                     List {
-                        ForEach(viewModel.orders) { order in
+                        ForEach(order.items) { order in
                             AppetizerListItem(item: order)
                         }
-                        .onDelete(perform: deleteItem)
+                        .onDelete(perform: order.remove)
 
                     }.listStyle(PlainListStyle())
 
                     Spacer()
-                    button {
+                    button(totalPrice: order.totalPrice) {
                         print("Clicked")
                     }
                 }
-                
-                if(viewModel.orders.isEmpty) {
+
+                if order.items.isEmpty {
                     EmptyState(
                         imageName: "empty-order",
                         message: "You have no items in your order.\nPlease add an appetizer."
                     )
                 }
-            
             }
         }
         .navigationTitle("Order")
     }
-
-    func deleteItem(at offsets: IndexSet) {
-        viewModel.orders.remove(atOffsets: offsets)
-    }
 }
 
-@ViewBuilder private func button(onClick: @escaping () -> Void) -> some View {
+@ViewBuilder private func button(totalPrice: Double, onClick: @escaping () -> Void) -> some View {
     Button {
         onClick()
     } label: {
-        CustomButton(title: "$\(444, specifier: "%.2f") - Add To Order")
+        Text("$\(totalPrice, specifier: "%.2f") - Add To Order")
     }
+    .modifier(StandardButtonStyle())
     .padding(.bottom, 25)
 }
 
 #Preview {
     OrderView()
+        .environmentObject(Order())
 }
