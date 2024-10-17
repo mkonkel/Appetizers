@@ -60,4 +60,10 @@ enum AletrContext {
         message: Text("There was an error saving or retrieving your data"),
         dismissButton: .default(Text("OK"))
     )
+    
+    static let genericError = AlertItem(
+        title: Text("Something Went Wrong"),
+        message: Text("There was an error while processing data."),
+        dismissButton: .default(Text("OK"))
+    )
 }

@@ -15,7 +15,7 @@ struct AppetizerDetailView: View {
 
     var body: some View {
         VStack {
-            topImage(imageUrlString: appetizer.imageURL) {
+            topImage(appetizer: appetizer) {
                 isShowingDetail = false
             }
             Spacer()
@@ -29,7 +29,6 @@ struct AppetizerDetailView: View {
                 order.add(appetizer)
                 isShowingDetail = false
             }
-                
         }
         .frame(width: 320, height: 525)
         .background(Color(.systemBackground))
@@ -71,10 +70,10 @@ struct AppetizerDetailView: View {
 }
 
 @ViewBuilder private func topImage(
-    imageUrlString: String,
+    appetizer: Appetizer,
     onClose: @escaping () -> Void
 ) -> some View {
-    AppetizerRemoteImage(urlString: imageUrlString)
+    AppetizerDetailImage(item: appetizer)
         .aspectRatio(contentMode: .fill)
         .frame(width: 320, height: 225)
         .overlay(alignment: .topTrailing) {

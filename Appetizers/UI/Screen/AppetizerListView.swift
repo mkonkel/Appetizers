@@ -23,7 +23,9 @@ struct AppetizerListView: View {
                 .navigationTitle("Appetizers")
                 .disabled(viewModel.isShowingDetail)
             }
-            .onAppear { viewModel.getAppetizers() }
+            .task {
+                await viewModel.getAppetizers()
+            }
             .blur(radius: viewModel.isShowingDetail ? 20 : 0)
 
             if viewModel.isShowingDetail {
