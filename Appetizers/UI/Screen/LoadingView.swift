@@ -12,9 +12,10 @@ struct LoadingView: View {
         ZStack {
             Color(.systemBackground)
                 .edgesIgnoringSafeArea(.all)
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle())
-                .foregroundColor(.brandPrimary)
+            
+            ProgressView("Loading...")
+                .progressViewStyle(CircularProgressViewStyle(tint: .brandPrimary))
+                .scaleEffect(2)
         }
     }
 }

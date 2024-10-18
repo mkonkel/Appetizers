@@ -10,11 +10,11 @@ import SwiftUI
 struct AccountView: View {
     @StateObject var viewModel = AccountViewViewModel()
     @FocusState private var focusedTextField: FormTextField?
-    
+
     private enum FormTextField {
         case firstName, lastName, email
     }
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -23,12 +23,12 @@ struct AccountView: View {
                         .focused($focusedTextField, equals: .firstName)
                         .onSubmit { focusedTextField = .lastName }
                         .submitLabel(.next)
-                    
+
                     TextField("Last Name", text: $viewModel.user.lastName)
                         .focused($focusedTextField, equals: .lastName)
                         .onSubmit { focusedTextField = .email }
                         .submitLabel(.next)
-                    
+
                     TextField("Emai", text: $viewModel.user.email)
                         .focused($focusedTextField, equals: .email)
                         .onSubmit { focusedTextField = nil }
@@ -36,8 +36,11 @@ struct AccountView: View {
                         .keyboardType(.emailAddress)
                         .autocapitalization(/*@START_MENU_TOKEN@*/ .none/*@END_MENU_TOKEN@*/)
                         .disableAutocorrection(true)
-                    
-                    DatePicker("Birthday", selection: $viewModel.user.birthDate, displayedComponents: .date)
+
+                    DatePicker("Birthday",
+                               selection: $viewModel.user.birthDate,
+                               in: Date().oneHundretTenYearsAgo ... Date().eighteenYearsAgo,
+                               displayedComponents: .date)
 
                     Button {
                         viewModel.saveChanges()
